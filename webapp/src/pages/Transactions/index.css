@@ -1,0 +1,43 @@
+.container{
+    padding: 20px;
+    background-color: #cc8cce;
+    color: black;
+    transition: width 0.3s ease-in-out;
+    position: relative;
+}
+
+.transaction-card {
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+.transaction-item {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 8px 0;
+    margin-bottom: 8px;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.logout-button {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #f9e7fa;
+    color: black;
+}
+
+@media (min-width: 768px) {
+    .container {
+      min-width: 600px;
+    }
+}
