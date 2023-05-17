@@ -166,6 +166,20 @@ yarn start:dev
 ```
 This will start the backend server in development mode and make it ready to handle incoming requests.
 
+## Backend documentation
+
+You can access the backend documentation simply starting the application with:
+```
+npm run start:dev
+```
+or
+
+```
+yarn start:dev
+```
+and then just going to your local browser and navigate to:
+> http://localhost:3333/api
+
 ## Backend Testing
 The backend application includes tests to ensure its functionality is working as expected. To run the unit tests, execute the following command:
 
