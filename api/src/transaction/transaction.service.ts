@@ -10,7 +10,10 @@ import {
   Transaction,
   TransactionType,
 } from '@prisma/client';
-import { TransactionDto } from './dto';
+import {
+  TransactionDto,
+  TransactionResumeBySellerDto,
+} from './dto';
 
 type PrismaSubset = Omit<
   PrismaService,
@@ -26,18 +29,18 @@ export type TransactionWithRelations = Transaction & {
   seller: Seller;
 };
 
-export type TransactionResumeBySeller = {
-  name: string;
-  earnings: number;
-  transactions: TransactionWithRelations[];
-};
+// export type TransactionResumeBySeller = {
+//   name: string;
+//   earnings: number;
+//   transactions: TransactionWithRelations[];
+// };
 
 @Injectable()
 export class TransactionService {
   constructor(private prisma: PrismaService) {}
 
   async getTransactions(): Promise<
-    TransactionResumeBySeller[]
+    TransactionResumeBySellerDto[]
   > {
     const transactions =
       await this.prisma.transaction.findMany({
@@ -52,10 +55,10 @@ export class TransactionService {
 
   private groupTransactionsBySeller(
     transactions: TransactionWithRelations[],
-  ): TransactionResumeBySeller[] {
+  ): TransactionResumeBySellerDto[] {
     const transactionGroupBySeller = new Map<
       string,
-      TransactionResumeBySeller
+      TransactionResumeBySellerDto
     >();
 
     for (const transaction of transactions) {

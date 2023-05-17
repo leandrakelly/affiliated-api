@@ -3,13 +3,11 @@ import {
   TransactionController,
   UploadedFileData,
 } from '../transaction.controller';
-import {
-  TransactionService,
-  TransactionResumeBySeller,
-} from '../transaction.service';
+import { TransactionService } from '../transaction.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { ConfigService } from '@nestjs/config';
 import { TransactionType } from '@prisma/client';
+import { TransactionResumeBySellerDto } from '../dto';
 
 describe('TransactionController', () => {
   let controller: TransactionController;
@@ -36,7 +34,7 @@ describe('TransactionController', () => {
 
   describe('getTransactions', () => {
     it('should retrive transactions with sum by seller', async () => {
-      const expected: TransactionResumeBySeller[] = [
+      const expected: TransactionResumeBySellerDto[] = [
         {
           name: 'seller 1',
           earnings: 5,

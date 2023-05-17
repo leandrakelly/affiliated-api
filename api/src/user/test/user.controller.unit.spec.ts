@@ -4,7 +4,7 @@ import { UserService } from '../user.service';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from '../../prisma/prisma.service';
 import { User } from '@prisma/client';
-import { EditUserDto } from '../dto';
+import { UserDto } from '../dto';
 
 describe('UserController', () => {
   let controller: UserController;
@@ -28,7 +28,7 @@ describe('UserController', () => {
   describe('editUser', () => {
     it('should edit the user', async () => {
       const FAKE_USER_ID = 'FAKE_ID';
-      const initialUser: EditUserDto = {
+      const initialUser: UserDto = {
         email: 'fake-fake@mail.com',
         firstName: 'fake-fake-fistName',
         lastName: 'fake-fake-lastName',

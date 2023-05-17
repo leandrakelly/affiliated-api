@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from '../user.service';
 import { PrismaService } from '../../prisma/prisma.service';
 import { ConfigService } from '@nestjs/config';
-import { EditUserDto } from '../dto';
+import { UserDto } from '../dto';
 import { User } from '@prisma/client';
 
 describe('UserService', () => {
@@ -27,7 +27,7 @@ describe('UserService', () => {
   describe('editUser', () => {
     it('should edit a user and return the updated user', async () => {
       const FAKE_USER_ID = 'FAKE_ID';
-      const initialUser: EditUserDto = {
+      const initialUser: UserDto = {
         email: 'fake-fake@mail.com',
         firstName: 'fake-fake-fistName',
         lastName: 'fake-fake-lastName',

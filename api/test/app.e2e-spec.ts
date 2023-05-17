@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { PrismaService } from '../src/prisma/prisma.service';
 import { AuthDto } from 'src/auth/dto';
-import { EditUserDto } from 'src/user/dto';
+import { UserDto } from 'src/user/dto';
 import { unlinkSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 
@@ -140,7 +140,7 @@ describe('App', () => {
   });
 
   describe('Users', () => {
-    const dto: EditUserDto = {
+    const dto: UserDto = {
       email: 'keri123@gmail.com',
       firstName: 'Keri',
     };

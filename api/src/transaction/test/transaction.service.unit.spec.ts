@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import {
-  TransactionResumeBySeller,
   TransactionService,
   TransactionWithRelations,
 } from '../transaction.service';
@@ -11,6 +10,7 @@ import {
   Seller,
   TransactionType,
 } from '@prisma/client';
+import { TransactionResumeBySellerDto } from '../dto';
 
 describe('TransactionService', () => {
   let service: TransactionService;
@@ -64,7 +64,7 @@ describe('TransactionService', () => {
           ...transaction,
           value: 10,
         });
-      const expected: TransactionResumeBySeller[] = [
+      const expected: TransactionResumeBySellerDto[] = [
         {
           name: 'fake-seller-name',
           earnings: 50,
@@ -125,7 +125,7 @@ describe('TransactionService', () => {
             ...transaction,
             value: 10,
           });
-        const expected: TransactionResumeBySeller[] = [
+        const expected: TransactionResumeBySellerDto[] = [
           {
             name: 'fake-seller-name',
             earnings:
