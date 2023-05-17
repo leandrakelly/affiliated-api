@@ -87,6 +87,20 @@ export const Transactions = () => {
     }
   };
 
+  function transformDateToBrazilianFormat(dateString: string | number | Date) {
+    const date = new Date(dateString);
+
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    const formattedDate = `${day.toString().padStart(2, "0")}/${month
+      .toString()
+      .padStart(2, "0")}/${year}`;
+
+    return formattedDate;
+  }
+
   const columns: ColumnsType<Transaction> = [
     {
       title: "Product",
@@ -110,6 +124,7 @@ export const Transactions = () => {
       title: "Date",
       dataIndex: "date",
       key: "date",
+      render: (date: string) => transformDateToBrazilianFormat(date),
     },
   ];
 
