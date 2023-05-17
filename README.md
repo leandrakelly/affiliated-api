@@ -60,7 +60,7 @@ git clone <repository-url>
 2. Navigate to the project directory:
 
 ```
-cd frontend
+cd webapp
 ```
 
 3. Install the dependencies using npm or Yarn:
