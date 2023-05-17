@@ -1,0 +1,138 @@
+section {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: #cc8cce;
+    border-radius: 0.5rem;
+}
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+a, a:visited {
+    color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button,
+textarea {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  padding: 0.25rem;
+}
+
+button{
+    background-color: #ececec;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    width: 100%;
+    margin: 0 auto;
+    color: #2c2c2c;
+}
+
+label,
+button {
+  margin-top: 0.8rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #666666;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: rgb(10, 134, 10);
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.register-link, .line {
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+.line {
+    margin: 0 0.3rem;
+}
+
+.invalid-input {
+    border: 1px solid red !important;
+}
+
+.valid-input {
+    border: 1px solid green !important;
+}
+
+.great-msg{
+    color: white;
+    font-weight: bold;
+    font-size: 0.65rem;
+    margin-left: 0.25rem;
+    background-color: limegreen;
+    padding: 2px;
+    width: 100px;
+    margin-top: 0.25rem;
+    margin-bottom: -10px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success {
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
