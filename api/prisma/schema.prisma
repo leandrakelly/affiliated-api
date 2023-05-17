@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  hash      String
+  firstName String?
+  lastName  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+
+  @@map("users")
+}
+
+enum TransactionType {
+  PRODUCER_SALE
+  AFFILIATE_SALE
+  PAID_COMMISSION
+  RECEIVED_COMMISSION
+}
+
+model Transaction {
+  id          String         @id @default(uuid())
+  type        TransactionType
+  date        DateTime
+  product     Product        @relation(fields: [productId], references: [id])
+  value       Int
+  seller      Seller         @relation(fields: [sellerId], references: [id])
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime?
+  deletedAt   DateTime?
+  productId   String
+  sellerId    String
+}
+
+model Seller {
+  id          String         @id @default(uuid())
+  name        String         @unique
+  transactions Transaction[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime?
+  deletedAt   DateTime?
+}
+
+model Product {
+  id          String         @id @default(uuid())
+  name        String         @unique
+  transactions Transaction[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime?
+  deletedAt   DateTime?
+}
+
