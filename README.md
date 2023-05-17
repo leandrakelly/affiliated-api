@@ -1,5 +1,7 @@
 # affiliated-apps
 
+![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/leandrakelly/affiliated-apps/blob/main/chrome-capture-2023-4-17.gif))
+
 This repository contains the frontend and backend applications for a Affiliated project challenge of **coodesh**.
 The frontend is built using React and TypeScript with PostreSQL as database, while the backend is built using NestJS with Typescript and Prisma. Together, these applications provide a seamless user experience.
 >  This is a challenge by [Coodesh](https://coodesh.com/)
